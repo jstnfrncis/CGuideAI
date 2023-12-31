@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Js Chart CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+</head>
+
+<style>
+    body{
+        background-color: #1C1C1C;
+        padding: 0;
+        margin: 0;
+    }
+    .chart-container{
+        max-width: 790px;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        margin: 0 auto;
+        
+    }
+
+
+  
+</style>
+<body>
+
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+      </div>
+
+      
+      
+
+      <script>
+        
+
+        const labels = ['','Social', 'Practical', 'Enterprising', 'Analytical', 'Creative', 'Organize',];
+        const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Your Results!',
+            data: [0, 5, 4, 6, 8, 6, 9],
+            fill: false,
+            borderColor: '#007bff',
+            backgroundColor: '#bad6ff',
+            tension: 0.1
+        }]
+        };
+
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    x: {
+                        grid: {
+                            color: '#222222', // Change the color of x-axis gridlines to white
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: '#222222', // Change the color of y-axis gridlines to white
+                        }
+                    }
+                }
+            }
+        };
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, config)
+ 
+
+      </script>
+
+
+</body>
+</html>
